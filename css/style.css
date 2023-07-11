@@ -1,1 +1,145 @@
+/* General */
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Josh Comeau's custom reset  
+https://www.joshwcomeau.com/css/custom-css-reset/*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* General styles */
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: green;
+}
+
+.container-wrapper {
+  margin: 0.5em;
+}
+
+.container {
+  max-width: 500px;
+  padding: 0.2em 1em 1em 1em;
+  margin: 2em auto;
+  background-color: #f7f8fc;
+  border-radius: 10px;
+}
+
+/* Header */
+
+.header-icons-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.2em;
+}
+
+.icon-profile,
+.chat-bubble {
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.logo {
+  width: 25%;
+  cursor: pointer;
+}
+
+/* Dog card */
+
+.dog-card {
+  position: relative;
+}
+
+.dog-img {
+  border-radius: 10px;
+  min-height: 650; /* => prevents layout shift */
+}
+
+.dog-profile {
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+  color: #fff;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.bio {
+  font-size: 1.3rem;
+}
+
+/* Swipe buttons */
+.swipe-icons-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 2em;
+}
+
+.like,
+.nope {
+  cursor: pointer;
+  padding: 2em;
+  background-color: #fff;
+  box-shadow: 0px 10px 20px #e9e9ea;
+  border-radius: 50%;
+  border: 4px solid transparent;
+}
+
+.nope:hover,
+.nope:focus {
+  background-color: pink;
+  border: 4px solid red;
+}
+
+.like:hover,
+.like:focus {
+  background-color: green;
+  border: 4px solid darkgreen;
+}
