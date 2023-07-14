@@ -15,7 +15,7 @@
     <div class="container-wrapper">
       <div id="container" class="container">
         <header>
-          <div class="header-icons-wrapper container">
+          <div class="header-icons-wrapper">
             <img
               src="images/icon-profile.png"
               alt="grey shape representing silhouette of person"
@@ -34,30 +34,21 @@
           </div>
         </header>
         <main>
-          <div class="dog-card">
-            <img
-              class="dog-img"
-              id="dog-img"
-              src="/images/dog-bella.jpg"
-              alt="large and wet brown dog with sunglasses and a person next to the dog"
-            />
-            <div class="dog-profile">
-              <h1>Name, <span>Age</span></h1>
-              <p class="bio">Bio</p>
-            </div>
+          <div id="dog-profile-container" class="dog-profile-container">
+            <!-- JS rendered here -->
           </div>
-
           <div class="swipe-icons-container">
-            <button class="nope">
-              <img src="images/icon-cross.png" alt="no-badge" />
+            <button id="nope-btn" class="nope-btn">
+              <img id="no-icon" src="images/icon-cross.png" alt="no-badge" />
             </button>
-            <button class="like">
-              <img src="images/icon-heart.png" alt="yes-badge" />
+            <button id="like-btn" class="like-btn">
+              <img id="like-icon" src="images/icon-heart.png" alt="yes-badge" />
             </button>
           </div>
         </main>
       </div>
     </div>
+
     <script src="js/index.js" type="module"></script>
   </body>
 </html>

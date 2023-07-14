@@ -36,40 +36,84 @@ This is a Scrimba solo project using HTML, CSS and JavaScript to create a Tinder
 - Finalize README file
 - Publish live URL
 
-### Questions
+### Questions and Challenges when building the app
 
-### Challenges
+- Came across unset to display the badges when clicking the buttons.
 
-### Improvements/Enhancements to Consider
+```js
+nopeElement.style.display = "unset";
+```
+
+- The image on the end page takes a long time to load.
+
+- Are the keys hasBeenSwiped and hasBeenLiked needed?
 
 ### Useful code snippets and tips
 
 - Good example of how to use ternary operator
 
 ```js
-//no more dogs and show number of matches
-function end() {
-  const matches = likedArray.length == 1 ? "match" : "matches";
-  document.getElementById("dog").innerHTML = `
-    <div class="end-state">
-        <h1>You had ${likedArray.length} ${matches}!</h1>
-        <h1>Click Paw to reload!</h1>
-    </div>`;
+//end page and show number of matches
+function endPageHtml() {
+  if (likedDogsCount >= 1) {
+    const match = likedDogsCount === 1 ? "match" : "matches";
+    dogProfileEl.innerHTML = `
+      <div class="end-page">
+        <h1>You have ${likedDogsCount} ${match}!</h1>
+        <img
+          class="dog-img"
+          height=700
+          id="dog-img"
+          src="./images/happy.png"
+          alt="happy dog"
+          />
+      </div>`;
+  } else {
+    dogProfileEl.innerHTML = `
+      <div class="end-page">
+          <h1>Zero matches.</h1>
+          <img
+          class="dog-img"
+          height=700
+          id="dog-img"
+          src="./images/unhappy.png"
+          alt="unhappy dog"
+          />
+      </div>`;
+  }
+
+  nopeBtn.style.visibility = "hidden";
+  likeBtn.style.visibility = "hidden";
 }
 ```
 
-- Adding a min-height attribute on the dog image height="700" => prevents layout shift
+```js
+import Dog from "./Dog.js";
+import dogsData from "./data.js";
 
-- adding custom class hidden to remove the buttons on the end screen
+let index = 0;
+let newDog = new Dog(dogsData[index]);
 
-### Inspiring Resources for this projects and future ones:
+function getNewDog() {
+  index++;
+
+  if (index < dogsData.length) {
+    newDog = new Dog(dogsData[index]);
+    render();
+  } else {
+    endPageHtml();
+  }
+}
+```
+
+- Prevent layout shift: Add a min-height attribute on the dog image height="700"
+
+### Inspiring Resources for this project and future ones:
 
 - [Josh Comeau's custom css reset](https://www.joshwcomeau.com/css/custom-css-reset/)
-
-- [reset svg icon for css](https://www.svgrepo.com/show/343263/reset.svg)
-
-- [Paul review of Amir's Tindog project](https://scrimba.com/scrim/co6b14e72abccab9623aca991)
 
 - [Amir from Scrimba showing the difference between using an array of objects instead of an object of objects](https://www.loom.com/share/2e61c3a728cc4474b4523fc5778b6fdf?sid=2fbe7f38-b6db-4530-933e-31a7490a3594)
 
 - [Gina, Scrimba Code Review about datasets](https://scrimba.com/scrim/co77b416c831d889035dda6d1)
+
+- [Using unset in JavaScript - any explicit value set for "display" for example will be removed](https://developer.mozilla.org/en-US/docs/Web/CSS/unset)

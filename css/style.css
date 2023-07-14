@@ -15,6 +15,8 @@ https://www.joshwcomeau.com/css/custom-css-reset/*/
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: "Poppins", sans-serif;
+  background-color: #343a40;
 }
 
 img,
@@ -48,26 +50,24 @@ h6 {
   isolation: isolate;
 }
 
-/* General styles */
-
-body {
-  font-family: "Poppins", sans-serif;
-  background: green;
-}
-
+/* Containers */
 .container-wrapper {
   margin: 0.5em;
 }
 
-.container {
+.container,
+.header-icons-wrapper {
   max-width: 500px;
-  padding: 0.2em 1em 1em 1em;
+  padding: 0.2em 1.2em 1.2em 1.2em;
   margin: 2em auto;
   background-color: #f7f8fc;
   border-radius: 10px;
 }
 
 /* Header */
+.header-icons-wrapper {
+  border: none;
+}
 
 .header-icons-wrapper {
   display: flex;
@@ -88,20 +88,24 @@ body {
   cursor: pointer;
 }
 
-/* Dog card */
+/* Dog container */
+
+.dog-profile-container {
+  transition: opacity 0.5s;
+}
 
 .dog-card {
   position: relative;
+  transition: opacity 6s;
 }
 
 .dog-img {
   border-radius: 10px;
-  min-height: 650; /* => prevents layout shift */
 }
 
-.dog-profile {
+.dog-info {
   position: absolute;
-  bottom: 50px;
+  bottom: 40px;
   left: 20px;
   color: #fff;
 }
@@ -122,24 +126,41 @@ h1 {
   padding: 2em;
 }
 
-.like,
-.nope {
+.like-btn,
+.nope-btn {
   cursor: pointer;
   padding: 2em;
   background-color: #fff;
-  box-shadow: 0px 10px 20px #e9e9ea;
+  box-shadow: 0px 10px 10px #e9e9ea;
   border-radius: 50%;
-  border: 4px solid transparent;
+  border: none;
+  transition: background-color 0.2s ease;
 }
 
-.nope:hover,
-.nope:focus {
-  background-color: pink;
-  border: 4px solid red;
+.nope-btn:hover,
+.nope-btn:focus {
+  background-color: #ffe7ef;
 }
 
-.like:hover,
-.like:focus {
-  background-color: green;
-  border: 4px solid darkgreen;
+.like-btn:hover,
+.like-btn:focus {
+  background-color: #dbfff4;
+}
+
+/* Badges */
+
+.nope-badge,
+.like-badge {
+  display: none;
+  width: 35%;
+  position: absolute;
+  left: 30px;
+  top: 60px;
+  transform: rotate(-35deg);
+  z-index: 1;
+}
+
+.end-page {
+  background-size: cover;
+  text-align: center;
 }
