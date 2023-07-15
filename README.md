@@ -1,15 +1,8 @@
-## Employee Directory
+## Tindog Project
 
 ### The challenge:
 
 This is a Scrimba solo project using HTML, CSS and JavaScript to create a Tinder app for dogs. Solving this project using JS class (Object Oriented Programming OOP)
-
-#### Consider:
-
-- Make this project my own by creating cat profiles
-- Use dataset
-- Use a reset button when user has clicked through till the end
-- generate cards on the end screen to view all matches in touch e.g. with .map()
 
 ### The requirements:
 
@@ -23,7 +16,7 @@ This is a Scrimba solo project using HTML, CSS and JavaScript to create a Tinder
 
 - When clicking on either the x or heart icon a badge appears on top of the image that states either "Like" or "Nope".
 - Another dog is displayed after a few seconds
-- After having clicked through the images, a page appears with the images that the user has liked.
+- After having clicked through the images, an end page appears stating how many matches have been made
 
 ### Process
 
@@ -38,17 +31,17 @@ This is a Scrimba solo project using HTML, CSS and JavaScript to create a Tinder
 
 ### Questions and Challenges when building the app
 
-- Came across unset to display the badges when clicking the buttons.
-
-```js
-nopeElement.style.display = "unset";
-```
-
 - The image on the end page takes a long time to load.
 
 - Are the keys hasBeenSwiped and hasBeenLiked needed?
 
 ### Useful code snippets and tips
+
+- Came across unset to display the badges when clicking the buttons.
+
+```js
+nopeElement.style.display = "unset";
+```
 
 - Good example of how to use ternary operator
 
@@ -87,6 +80,8 @@ function endPageHtml() {
 }
 ```
 
+- I am happy with this bit of code to render the end page.
+
 ```js
 import Dog from "./Dog.js";
 import dogsData from "./data.js";
@@ -108,12 +103,10 @@ function getNewDog() {
 
 - Prevent layout shift: Add a min-height attribute on the dog image height="700"
 
-### Inspiring Resources for this project and future ones:
+### Resources:
 
 - [Josh Comeau's custom css reset](https://www.joshwcomeau.com/css/custom-css-reset/)
 
 - [Amir from Scrimba showing the difference between using an array of objects instead of an object of objects](https://www.loom.com/share/2e61c3a728cc4474b4523fc5778b6fdf?sid=2fbe7f38-b6db-4530-933e-31a7490a3594)
-
-- [Gina, Scrimba Code Review about datasets](https://scrimba.com/scrim/co77b416c831d889035dda6d1)
 
 - [Using unset in JavaScript - any explicit value set for "display" for example will be removed](https://developer.mozilla.org/en-US/docs/Web/CSS/unset)
