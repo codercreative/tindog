@@ -34,17 +34,28 @@
           </div>
         </header>
         <main>
-          <div id="dog-profile-container" class="dog-profile-container">
+          <section id="dog-profile-container" class="dog-profile-container">
             <!-- JS rendered here -->
-          </div>
+          </section>
           <div class="swipe-icons-container">
-            <button id="nope-btn" class="nope-btn">
-              <img id="no-icon" src="images/icon-cross.png" alt="no-badge" />
+            <button id="nope-btn" class="nope-btn" aria-label="no-badge">
+              <img
+                class="no-icon"
+                id="no-icon"
+                src="images/icon-cross.png"
+                alt="no-badge"
+              />
             </button>
-            <button id="like-btn" class="like-btn">
-              <img id="like-icon" src="images/icon-heart.png" alt="yes-badge" />
+            <button id="like-btn" class="like-btn" aria-label="like-badge">
+              <img
+                class="like-icon"
+                id="like-icon"
+                src="images/icon-heart.png"
+                alt="yes-badge"
+              />
             </button>
           </div>
+          <button class="reset-btn" id="reset-btn">Reset</button>
         </main>
       </div>
     </div>

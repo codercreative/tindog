@@ -11,7 +11,7 @@ class Dog {
       <div class="dog-card">
         <img
           class="dog-img"
-          height=700
+         
           id="dog-img"
           src="${avatar}"
           alt="dog with the name of ${name}"
@@ -32,6 +32,23 @@ class Dog {
       />`;
 
     return dogFeed;
+  }
+
+  likedDogsHtml() {
+    let likedFeed = "";
+    const { name, avatar, age } = this;
+
+    likedFeed = `
+      <div class="liked-dog-card">
+        <img
+          class="liked-img"
+          height=200
+          id="dog-img"
+          src="${avatar}"
+          alt="dog with the name of ${name}"
+        />`;
+
+    return likedFeed;
   }
 }
 

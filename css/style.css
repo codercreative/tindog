@@ -1,9 +1,6 @@
-/* General */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-/* Josh Comeau's custom reset  
-https://www.joshwcomeau.com/css/custom-css-reset/*/
+/* General */
 *,
 *::before,
 *::after {
@@ -13,52 +10,24 @@ https://www.joshwcomeau.com/css/custom-css-reset/*/
 }
 
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
   font-family: "Poppins", sans-serif;
   background-color: #343a40;
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-#root,
-#__next {
-  isolation: isolate;
-}
-
 /* Containers */
 .container-wrapper {
-  margin: 0.5em;
+  margin: 0 0.5em;
 }
 
-.container,
-.header-icons-wrapper {
+.container {
+  background-color: #f7f8fc;
+  padding: 0 0.8em 1em;
+  margin: 0 auto;
   max-width: 500px;
-  padding: 0.2em 1.2em 1.2em 1.2em;
+}
+
+.header-icons-wrapper {
+  padding: 0.2em 1.2em 0 1.2em;
   margin: 2em auto;
   background-color: #f7f8fc;
   border-radius: 10px;
@@ -73,13 +42,13 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 1.2em;
+  padding-top: 1.5em;
 }
 
 .icon-profile,
 .chat-bubble {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 1.8em;
+  height: 1.8em;
   cursor: pointer;
 }
 
@@ -101,6 +70,10 @@ h6 {
 
 .dog-img {
   border-radius: 10px;
+  width: 100%;
+  object-fit: cover;
+  max-height: 400px;
+  /* object-position: right; */
 }
 
 .dog-info {
@@ -108,6 +81,7 @@ h6 {
   bottom: 40px;
   left: 20px;
   color: #fff;
+  max-width: 380px;
 }
 
 h1 {
@@ -129,9 +103,9 @@ h1 {
 .like-btn,
 .nope-btn {
   cursor: pointer;
-  padding: 2em;
+  padding: 1em;
   background-color: #fff;
-  box-shadow: 0px 10px 10px #e9e9ea;
+  box-shadow: 0px 5px 5px #e9e9ea;
   border-radius: 50%;
   border: none;
   transition: background-color 0.2s ease;
@@ -147,6 +121,11 @@ h1 {
   background-color: #dbfff4;
 }
 
+.like-icon,
+.no-icon {
+  vertical-align: middle;
+}
+
 /* Badges */
 
 .nope-badge,
@@ -160,7 +139,58 @@ h1 {
   z-index: 1;
 }
 
-.end-page {
-  background-size: cover;
+/* End page */
+
+.end-text {
   text-align: center;
+  padding-bottom: 2rem;
+}
+
+.liked-dog-card {
+  text-align: center;
+}
+
+.liked-img {
+  border-radius: 50%;
+  height: 13em;
+  width: 13em;
+  object-fit: cover;
+  margin-bottom: 2em;
+}
+
+/* Reset Button */
+
+.reset-btn {
+  display: none;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  background-color: #ff5757;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+
+.reset-btn:hover {
+  background-color: #e53e3e;
+}
+
+/* Media queries */
+
+@media (min-width: 480px) {
+  .like-btn,
+  .nope-btn {
+    padding: 2em;
+  }
+  .dog-img {
+    max-height: 700px;
+    margin: 0 auto;
+  }
+  .icon-profile,
+  .chat-bubble {
+    width: 2.3em;
+    height: 2.3em;
+  }
 }
