@@ -62,8 +62,9 @@ function endPageHtml() {
   }
 
   dogProfileEl.innerHTML = endPageHtmlContent;
-  nopeBtn.style.visibility = "hidden";
-  likeBtn.style.visibility = "hidden";
+  swipeIconsContainer.style.display = "none";
+  // nopeBtn.style.visibility = "hidden";
+  // likeBtn.style.visibility = "hidden";
   resetBtn.style.display = "block";
 }
 
@@ -82,8 +83,9 @@ function resetApp() {
   render();
 
   // Show the nope and like buttons
-  nopeBtn.style.visibility = "visible";
-  likeBtn.style.visibility = "visible";
+  swipeIconsContainer.style.display = "flex";
+  // nopeBtn.style.visibility = "visible";
+  // likeBtn.style.visibility = "visible";
 
   //  Re-render the swipe buttons
   swipeIconsContainer.innerHTML = swipeIconsContainerHtml;

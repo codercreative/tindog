@@ -70,18 +70,8 @@ function endPageHtml() {
     dogProfileEl.innerHTML = `
       <div class="end-page">
           <h1>Zero matches.</h1>
-          <img
-          class="dog-img"
-          height=700
-          id="dog-img"
-          src="./images/unhappy.png"
-          alt="unhappy dog"
-          />
-      </div>`;
+       `;
   }
-
-  nopeBtn.style.visibility = "hidden";
-  likeBtn.style.visibility = "hidden";
 }
 ```
 
@@ -149,7 +139,7 @@ document.addEventListener("click", function (e) {
 
 CSS:
 
-- For improved UX reduce like/cross button size, reduce padding on swipe-icons container
+- For improved UX on mobile view, reduce like/cross button size, reduce padding on swipe-icons container
 
 - Use the following CSS to improved responsiveness of image:
 
@@ -171,15 +161,27 @@ CSS:
 
 - Perhaps place custom Josh Comeau reset in a separate file, to be reused more easily - or just use CSS normalize
 
-- Place render function at the end of the JS page
+- Place render function at the end of the JS file.
 
-### Enhancements still needed
+- Fixed an issue with like and nope buttons appearing on the end page on the second iteration. I replaced this code:
 
-- After clicking the reset button and displaying the dogs a second time, the nope and like buttons appear on the end page. Need to fix this.
+```js
+nopeBtn.style.visibility = "hidden";
+likeBtn.style.visibility = "hidden";
+nopeBtn.style.visibility = "visible";
+likeBtn.style.visibility = "visible";
+```
 
-- Need to remove the swipe-icons-container from the DOM flow so not to have a lot of empty white space on the end page
+with this (and saved some lines of code too):
 
-- Need to update the project with the names and bio of the liked dogs. Need to add a contact me button as well.
+```js
+swipeIconsContainer.style.display = "flex";
+swipeIconsContainer.style.display = "none";
+```
+
+### Enhancement still needed
+
+- Would like to update the project with the names and bio of the liked dogs. Need to add a "contact me" button as well.
 
 ### Resources:
 
@@ -189,4 +191,4 @@ CSS:
 
 - [Using unset in JavaScript - any explicit value set for "display" for example will be removed](https://developer.mozilla.org/en-US/docs/Web/CSS/unset)
 
--[CSS Reset vs. CSS Normalize?](https://elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e)
+- [CSS Reset vs. CSS Normalize?](https://elad.medium.com/normalize-css-or-css-reset-9d75175c5d1e)
